@@ -4,6 +4,7 @@ import * as style from "./style.css";
 const Home: FunctionalComponent = () => {
     return (
         <div class={style.home}>
+            <h1>もちのあのホームページ</h1>
             <h2>Youtube</h2>
             <p>
                 <a href="https://www.youtube.com/channel/UCQZqwa5cnLN8HNpZyr3Z6vQ">
