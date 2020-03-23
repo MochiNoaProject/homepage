@@ -11,6 +11,19 @@ export default {
      * @param {object} options - this is mainly relevant for plugins (will always be empty in the config), default to an empty object
      **/
     webpack(config, env, helpers, options) {
+        const publicPath = process.env.GITHUB_PAGES
+            ? `/${process.env.GITHUB_PAGES}/`
+            : "/";
+        const ghEnv =
+            process.env.GITHUB_PAGES &&
+            JSON.stringify(`${process.env.GITHUB_PAGES}`);
+
+        config.output.publicPath = publicPath;
+        const { plugin } = helpers.getPluginsByName(config, "DefinePlugin")[0];
+        Object.assign(plugin.definitions, {
+            ["process.env.GITHUB_PAGES"]: ghEnv
+        });
+
         // Switch css-loader for typings-for-css-modules-loader, which is a wrapper
         // that automatically generates .d.ts files for loaded CSS
         helpers.getLoadersByName(config, "css-loader").forEach(({ loader }) => {
