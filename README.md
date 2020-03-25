@@ -1,4 +1,6 @@
-# homepage
+# 望月のあのホームページを作ろう！
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/488bafbd-b616-4a72-bd60-fe29858bf8f0/deploy-status)](https://app.netlify.com/sites/mochinoa-homepage/deploys)
 
 ## CLI Commands
 *   `npm install`: Installs dependencies
