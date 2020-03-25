@@ -1,0 +1,37 @@
+name: Assign auto
+
+on:
+  pull_request:
+    types: opened
+
+jobs:
+  assign:
+    name: Set assignees and reviewers
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Set assignees
+        env:
+          ASSIGNEES: "${{ github.actor }}"
+        run: |
+          assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees | length')
+          if [[ 0 == $assignee_count ]]; then
+            assignees=$(echo "\"${ASSIGNEES// /}\"" | jq 'split(",")')
+            curl -X POST \
+                 -H "Content-Type: application/json" \
+                 -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                 -d "{ \"assignees\": $assignees }" \
+                 https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/assignees
+          fi
+      - name: Set reviewers
+        env:
+          REVIEWERS: "MochizukiNoa" 
+        run: |
+          reviewer_count=$(cat ${{ github.event_path }} | jq '.pull_request.requested_reviewers | length')
+          if [[ 0 == $reviewer_count ]]; then
+            reviewers=$(echo "\"${REVIEWERS// /}\"" | jq 'split(",") | .-["${{ github.actor }}"]')
+            curl -X POST \
+                 -H "Content-Type: application/json" \
+                 -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                 -d "{ \"reviewers\": $reviewers }" \
+                 https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers
+          fi
