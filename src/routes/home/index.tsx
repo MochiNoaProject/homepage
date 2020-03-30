@@ -50,9 +50,9 @@ const Home: FunctionalComponent = () => {
                         width="560"
                         height="315"
                         src="https://www.youtube-nocookie.com/embed/iLH-gW7Iu30?start=2604"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
+                        data-frameborder="0"
+                        data-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        data-allowfullscreen>
                     </iframe>
                     <p>
                         <a href="https://www.youtube.com/channel/UCQZqwa5cnLN8HNpZyr3Z6vQ">More</a>

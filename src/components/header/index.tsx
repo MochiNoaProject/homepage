@@ -2,7 +2,6 @@ import { FunctionalComponent, h } from "preact";
 import { Link } from "preact-router/match";
 import * as style from "./style.css";
 import baseroute from "../../baseroute";
-import Logo from "../../assets/logo.png"
 
 const Header: FunctionalComponent = () => {
     return (
@@ -10,7 +9,7 @@ const Header: FunctionalComponent = () => {
             <header class={style.header}>
                 <p class={style.logo}>
                     <Link href={`${baseroute}/`}>
-                        <img src={Logo} alt="Logo"/>
+                        <img src="/assets/logo.png" alt="Logo"/>
                     </Link>
                 </p>
                 <nav>
