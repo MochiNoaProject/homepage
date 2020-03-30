@@ -1,14 +1,12 @@
 import { FunctionalComponent, h } from "preact";
 import * as style from "./style.css";
-import Logo from "../../assets/logo.png"
-import wink from "./ういんく.png"
 
 const Home: FunctionalComponent = () => {
     return (
         <div class={style.home}>
             <div class={style.main}>
                 <p class={style.topLogo}>
-                    <img src={Logo} alt="Logo"/>
+                    <img src="assets/logo.png" alt="Logo"/>
                 </p>
                 <h2>Youtube</h2>
                 <p>
@@ -62,7 +60,7 @@ const Home: FunctionalComponent = () => {
                 </div>
             </div>
             <div class={style.back}>
-                <img src={wink} alt="wink"/>
+                <img src="/assets/ういんく.png" alt="wink"/>
             </div>
         </div>
     );
