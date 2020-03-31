@@ -3,6 +3,7 @@ import * as style from "./style.css";
 
 const Home: FunctionalComponent = () => {
     const isDarkMode =
+        typeof window !== "undefined" &&
         window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
     return (
