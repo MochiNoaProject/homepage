@@ -28,8 +28,8 @@ const Home: FunctionalComponent = () => {
                 </p>
                 <h2>FANBOX</h2>
                 <p>
-                    <a href="https://www.pixiv.net/fanbox/creator/49400494">
-                        https://www.pixiv.net/fanbox/creator/49400494
+                    <a href=" https://mochizukinoa.fanbox.cc/ ">
+                         https://mochizukinoa.fanbox.cc/ 
                     </a>
                 </p>
                 <h2>もちのあちゃんのおみせ</h2>
