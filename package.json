@@ -7,7 +7,7 @@
     "start": "per-env",
     "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
-    "build": "preact build",
+    "build": "preact build && node scripts/insert-mochinoa-aa-to-html",
     "build:gh": "GITHUB_PAGES=homepage preact build && dot-json ./build/manifest.json start_url \"/homepage/\"",
     "serve": "preact build && sirv build --port 8080 --cors --single",
     "dev": "preact watch",
