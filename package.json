@@ -11,19 +11,17 @@
     "build:gh": "GITHUB_PAGES=homepage preact build && dot-json ./build/manifest.json start_url \"/homepage/\"",
     "serve": "preact build && sirv build --port 8080 --cors --single",
     "dev": "preact watch",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
-    "test": "jest ./tests",
-    "precommit": "lint-staged"
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "test": "jest ./tests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
-    "*.{css,md,scss}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ]
+    "*.{css,md,scss}": "prettier --write",
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
   },
   "eslintIgnore": [
     "build/*"
@@ -38,14 +36,15 @@
   "devDependencies": {
     "@types/jest": "^25.1.2",
     "@types/webpack-env": "^1.15.1",
-    "@typescript-eslint/eslint-plugin": "^2.19.0",
-    "@typescript-eslint/parser": "^2.19.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
     "css-loader": "^1.0.1",
     "dot-json": "^1.2.0",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "husky": "^4.2.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
