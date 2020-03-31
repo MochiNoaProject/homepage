@@ -2,11 +2,15 @@ import { FunctionalComponent, h } from "preact";
 import * as style from "./style.css";
 
 const Home: FunctionalComponent = () => {
+    const isDarkMode =
+        typeof window !== "undefined" &&
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
     return (
         <div class={style.home}>
             <div class={style.main}>
                 <p class={style.topLogo}>
-                    <img src="assets/logo.png" alt="Logo"/>
+                    <img src="assets/logo.png" alt="Logo" />
                 </p>
                 <h2>Youtube</h2>
                 <p>
@@ -46,21 +50,26 @@ const Home: FunctionalComponent = () => {
                 </p>
                 <div class={style.youtubeBox}>
                     <h3>動画</h3>
-                    <iframe 
+                    <iframe
                         width="560"
                         height="315"
                         src="https://www.youtube-nocookie.com/embed/iLH-gW7Iu30?start=2604"
                         data-frameborder="0"
                         data-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        data-allowfullscreen>
-                    </iframe>
+                        data-allowfullscreen
+                    ></iframe>
                     <p>
-                        <a href="https://www.youtube.com/channel/UCQZqwa5cnLN8HNpZyr3Z6vQ">More</a>
+                        <a href="https://www.youtube.com/channel/UCQZqwa5cnLN8HNpZyr3Z6vQ">
+                            More
+                        </a>
                     </p>
                 </div>
             </div>
             <div class={style.back}>
-                <img src="/assets/ういんく.png" alt="wink"/>
+                {isDarkMode && (
+                    <img src="/assets/お姉さんの姿.png" alt="wink" />
+                )}
+                {!isDarkMode && <img src="/assets/ういんく.png" alt="wink" />}
             </div>
         </div>
     );
