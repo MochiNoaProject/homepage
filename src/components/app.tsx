@@ -1,6 +1,5 @@
 import { FunctionalComponent, h } from "preact";
 import { Route, Router, RouterOnChangeArgs } from "preact-router";
-import baseroute from "../baseroute";
 
 import Home from "../routes/home";
 import Profile from "../routes/profile";
@@ -24,14 +23,14 @@ const App: FunctionalComponent = () => {
         <div id="app">
             <Header />
             <Router onChange={handleRoute}>
-                <Route path={`${baseroute}/`} component={Home} />
+                <Route path={`/`} component={Home} />
                 <Route
-                    path={`${baseroute}/profile/`}
+                    path={`/profile/`}
                     component={Profile}
                     user="me"
                 />
                 <Route
-                    path={`${baseroute}/profile/:user`}
+                    path={`/profile/:user`}
                     component={Profile}
                 />
                 <NotFoundPage default />
