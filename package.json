@@ -11,8 +11,7 @@
     "build:gh": "GITHUB_PAGES=homepage preact build && dot-json ./build/manifest.json start_url \"/homepage/\"",
     "serve": "preact build && sirv build --port 8080 --cors --single",
     "dev": "preact watch",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "test": "jest ./tests"
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "husky": {
     "hooks": {
