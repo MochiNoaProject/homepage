@@ -18,7 +18,7 @@ jobs:
             assignees=$(echo "\"${ASSIGNEES// /}\"" | jq 'split(",")')
             curl -X POST \
                  -H "Content-Type: application/json" \
-                 -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                 -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}" \
                  -d "{ \"assignees\": $assignees }" \
                  https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/assignees
           fi
@@ -31,7 +31,7 @@ jobs:
             reviewers=$(echo "\"${REVIEWERS// /}\"" | jq 'split(",") | .-["${{ github.actor }}"]')
             curl -X POST \
                  -H "Content-Type: application/json" \
-                 -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                 -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}" \
                  -d "{ \"reviewers\": $reviewers }" \
                  https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers
           fi
