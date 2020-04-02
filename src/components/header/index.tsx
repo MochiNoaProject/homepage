@@ -1,11 +1,11 @@
 import { FunctionalComponent, h } from "preact";
 import { Link } from "preact-router/match";
-import { useState } from "preact/hooks";
+import { useState, useEffect } from "preact/hooks";
 import * as style from "./style.css";
 
 const Header: FunctionalComponent = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    useState(() => {
+    useEffect(() => {
         document.addEventListener("scroll", () => {
             setIsScrolled(window.scrollY > 100);
         });
