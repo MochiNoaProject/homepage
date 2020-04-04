@@ -24,7 +24,7 @@ const Home: FunctionalComponent = () => {
                         https://twitter.com/_noach
                     </a>
                 </p>
-                <h2>Github</h2>
+                <h2>GitHub</h2>
                 <p>
                     <a href="https://github.com/MochiNoaProject/homepage">
                         https://github.com/MochiNoaProject/homepage
