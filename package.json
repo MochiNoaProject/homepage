@@ -7,10 +7,10 @@
     "start": "per-env",
     "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
-    "build": "preact build && node scripts/insert-mochinoa-aa-to-html",
-    "build:gh": "GITHUB_PAGES=homepage preact build && dot-json ./build/manifest.json start_url \"/homepage/\"",
-    "serve": "preact build && sirv build --port 8080 --cors --single",
-    "dev": "preact watch",
+    "build": "preact build --template src/template.html && node scripts/insert-mochinoa-aa-to-html",
+    "build:gh": "GITHUB_PAGES=homepage preact build --template src/template.html && dot-json ./build/manifest.json start_url \"/homepage/\"",
+    "serve": "preact build --template src/template.html && sirv build --port 8080 --cors --single",
+    "dev": "preact watch --template src/template.html",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "husky": {
