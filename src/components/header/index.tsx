@@ -20,7 +20,7 @@ const Header: FunctionalComponent = () => {
             <header class={style.header}>
                 <p class={style.logo}>
                     <Link href={`/`}>
-                        <img src="/assets/logo.png" alt="Logo" />
+                        <img src="/assets/logo-small.png" alt="Logo" />
                     </Link>
                 </p>
                 <nav>
