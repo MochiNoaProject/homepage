@@ -1,7 +1,7 @@
 import { FunctionalComponent, h } from "preact";
 import * as style from "./style.css";
 
-const Header: FunctionalComponent = () => {
+const Footer: FunctionalComponent = () => {
     return (
         <footer class={style.footer}>
             <p class={style.copy}>©︎MochizukiNoa</p>
@@ -9,4 +9,4 @@ const Header: FunctionalComponent = () => {
     );
 };
 
-export default Header;
+export default Footer;
