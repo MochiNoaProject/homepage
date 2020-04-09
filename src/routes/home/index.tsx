@@ -8,6 +8,12 @@ const Home: FunctionalComponent = () => {
         window.matchMedia("(prefers-color-scheme: dark)").matches;
     return (
         <div class={style.home}>
+            <head>
+                <meta
+                    name="description"
+                    content="望月のあ Official Site"
+                ></meta>
+            </head>
             <div class={style.main}>
                 <p class={style.topLogo}>
                     <img src="assets/logo.png" alt="Logo" />
@@ -51,25 +57,56 @@ const Home: FunctionalComponent = () => {
                 <div class={style.youtubeBox}>
                     <h3>動画</h3>
                     <iframe
+                        title="望月のあ/MochizukiNoa"
                         width="560"
                         height="315"
                         src="https://www.youtube-nocookie.com/embed/iLH-gW7Iu30?start=2604"
                         data-frameborder="0"
                         data-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         data-allowfullscreen
+                        class="lazy"
                     ></iframe>
                     <p>
-                        <a href="https://www.youtube.com/channel/UCQZqwa5cnLN8HNpZyr3Z6vQ">
-                            More
+                        <a
+                            rel="preconnect"
+                            href="https://www.youtube.com/channel/UCQZqwa5cnLN8HNpZyr3Z6vQ"
+                        >
+                            More Videos
                         </a>
                     </p>
                 </div>
             </div>
             <div class={style.back}>
                 {isDarkMode && (
-                    <img src="/assets/お姉さんの姿.png" alt="wink" />
+                    <picture>
+                        <source
+                            srcSet="/assets/お姉さんの姿-xsmall.png"
+                            alt="wink"
+                            media="(max-width: 480px)"
+                        />
+                        <source
+                            srcSet="/assets/お姉さんの姿-small.png"
+                            alt="wink"
+                            media="(max-width: 1440px)"
+                        />
+                        <img src="/assets/お姉さんの姿.png" alt="wink" />
+                    </picture>
                 )}
-                {!isDarkMode && <img src="/assets/ういんく.png" alt="wink" />}
+                {!isDarkMode && (
+                    <picture>
+                        <source
+                            srcSet="/assets/ういんく-xsmall.png"
+                            alt="wink"
+                            media="(max-width: 480px)"
+                        />
+                        <source
+                            srcSet="/assets/ういんく-small.png"
+                            alt="wink"
+                            media="(max-width: 1440px)"
+                        />
+                        <img src="/assets/ういんく.png" alt="wink" />
+                    </picture>
+                )}
             </div>
         </div>
     );
