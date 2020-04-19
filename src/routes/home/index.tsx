@@ -1,5 +1,6 @@
 import { FunctionalComponent, h } from "preact";
 import * as style from "./style.css";
+import LinkButton from "../../components/link_button";
 
 const Home: FunctionalComponent = () => {
     const isDarkMode =
@@ -18,42 +19,44 @@ const Home: FunctionalComponent = () => {
                 <p class={style.topLogo}>
                     <img src="assets/logo.png" alt="Logo" />
                 </p>
-                <h2>Youtube</h2>
-                <p>
-                    <a href="https://www.youtube.com/channel/UCQZqwa5cnLN8HNpZyr3Z6vQ">
-                        https://www.youtube.com/channel/UCQZqwa5cnLN8HNpZyr3Z6vQ
-                    </a>
-                </p>
-                <h2>Twitter</h2>
-                <p>
-                    <a href="https://twitter.com/_noach">
-                        https://twitter.com/_noach
-                    </a>
-                </p>
-                <h2>GitHub</h2>
-                <p>
-                    <a href="https://github.com/MochiNoaProject/homepage">
-                        https://github.com/MochiNoaProject/homepage
-                    </a>
-                </p>
-                <h2>FANBOX</h2>
-                <p>
-                    <a href="https://www.pixiv.net/fanbox/creator/49400494">
-                        https://www.pixiv.net/fanbox/creator/49400494
-                    </a>
-                </p>
-                <h2>もちのあちゃんのおみせ</h2>
-                <p>
-                    <a href="https://mochinoa.booth.pm/">
-                        https://mochinoa.booth.pm/
-                    </a>
-                </p>
-                <h2>マシュマロ</h2>
-                <p>
-                    <a href="https://marshmallow-qa.com/_noach">
-                        https://marshmallow-qa.com/_noach
-                    </a>
-                </p>
+                <div class={style.links}>
+                    <LinkButton
+                        href="https://www.youtube.com/channel/UCQZqwa5cnLN8HNpZyr3Z6vQ"
+                        color="#FF0000"
+                    >
+                        YouTube
+                    </LinkButton>
+                    <LinkButton
+                        href="https://twitter.com/_noach"
+                        color="#1DA1F2"
+                    >
+                        Twitter
+                    </LinkButton>
+                    <LinkButton
+                        href="https://github.com/MochiNoaProject/homepage"
+                        color="#24292e"
+                    >
+                        GitHub
+                    </LinkButton>
+                    <LinkButton
+                        href="https://www.pixiv.net/fanbox/creator/49400494"
+                        color="#FFBB28"
+                    >
+                        FANBOX
+                    </LinkButton>
+                    <LinkButton
+                        href="https://mochinoa.booth.pm/"
+                        color="#FC4D50"
+                    >
+                        もちのあちゃんのおみせ
+                    </LinkButton>
+                    <LinkButton
+                        href="https://marshmallow-qa.com/_noach"
+                        color="#F3969A"
+                    >
+                        マシュマロ
+                    </LinkButton>
+                </div>
                 <div class={style.youtubeBox}>
                     <h3>動画</h3>
                     <iframe
