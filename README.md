@@ -1,19 +1,19 @@
 # 望月のあのホームページを作ろう！
 
 ## CLI Commands
-*   `npm install`: Installs dependencies
 
-*   `npm run start`: Runs `serve` or `dev`, depending on `NODE_ENV` value. Defaults to `dev server`
+-   `yarn install`: Installs dependencies
 
-*   `npm run dev`: Run a development, HMR server
+-   `yarn start`: Runs `serve` or `dev`, depending on `NODE_ENV` value. Defaults to `dev server`
 
-*   `npm run serve`: Run a production-like server
+-   `yarn run dev`: Run a development, HMR server
 
-*   `npm run build`: Production-ready build
+-   `yarn run serve`: Run a production-like server
 
-*   `npm run lint`: Pass TypeScript files using TSLint
+-   `yarn run build`: Production-ready build
 
-*   `npm run test`: Run Jest and [`preact-render-spy`](https://github.com/mzgoddard/preact-render-spy) for your tests
+-   `yarn run lint`: Pass TypeScript files using TSLint
 
+-   `yarn run test`: Run Jest and [`preact-render-spy`](https://github.com/mzgoddard/preact-render-spy) for your tests
 
 For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
