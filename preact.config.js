@@ -19,6 +19,12 @@ export default {
             JSON.stringify(`${process.env.GITHUB_PAGES}`);
 
         config.output.publicPath = publicPath;
+
+        const indexCritters = config.plugins.findIndex(plugin => plugin.constructor && plugin.constructor.name === "Critters");
+        if (indexCritters !== -1) {
+            config.plugins.splice(indexCritters, 1);
+        }
+
         const { plugin } = helpers.getPluginsByName(config, "DefinePlugin")[0];
         Object.assign(plugin.definitions, {
             ["process.env.GITHUB_PAGES"]: ghEnv
