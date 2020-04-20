@@ -16,13 +16,13 @@ const Profile: FunctionalComponent<Props> = (props: Props) => {
         const timer = window.setInterval(() => setTime(Date.now()), 1000);
 
         // gets called just before navigating away from the route
-        return () => {
+        return (): void => {
             clearInterval(timer);
         };
     }, []);
 
     // update the current time
-    const increment = () => {
+    const increment = (): void => {
         setCount(count + 1);
     };
 

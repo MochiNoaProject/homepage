@@ -10,7 +10,7 @@ const Header: FunctionalComponent = () => {
             setIsScrolled(window.scrollY > 100);
         });
         setIsScrolled(window.scrollY > 100);
-    });
+    }, []);
     return (
         <div
             class={
