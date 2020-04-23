@@ -1,12 +1,34 @@
 import { FunctionalComponent, h } from "preact";
 import * as style from "./style.css";
 import LinkButton from "../../components/link_button";
+import { getCalenderURL } from "../../helpers/calendar";
+import { isSmartphone } from "../../helpers/device";
+import { isBrowser } from "../../helpers/window";
 
 const Home: FunctionalComponent = () => {
     const isDarkMode =
-        typeof window !== "undefined" &&
+        isBrowser &&
         window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const smartphone = isSmartphone();
+    const calenderWidth = smartphone ? "300px" : "800px";
+    const calenderURL = getCalenderURL(
+        "https://calendar.google.com/calendar/b/1/embed",
+        {
+            src: "hp1cjinb4dhjh7pk3k6ln7138g@group.calendar.google.com",
+            height: 600,
+            showTitle: false,
+            showNav: false,
+            showPrint: false,
+            showTabs: false,
+            showCalendars: false,
+            showTz: false,
+            showDate: false,
+            weekStart: 1,
+            timezone: "Asia/Tokyo",
+            mode: smartphone ? "AGENDA" : "WEEK"
+        }
+    );
     return (
         <div class={style.home}>
             <head>
@@ -77,6 +99,14 @@ const Home: FunctionalComponent = () => {
                             More Videos
                         </a>
                     </p>
+                </div>
+                <div class={style.calenderBox}>
+                    <h3>予定表</h3>
+                    <iframe
+                        width={calenderWidth}
+                        height="600px"
+                        src={calenderURL}
+                    ></iframe>
                 </div>
             </div>
             <div class={style.back}>
