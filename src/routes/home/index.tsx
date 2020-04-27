@@ -61,7 +61,7 @@ const Home: FunctionalComponent = () => {
                         GitHub
                     </LinkButton>
                     <LinkButton
-                        href="https://www.pixiv.net/fanbox/creator/49400494"
+                        href="https://mochizukinoa.fanbox.cc/"
                         color="#FFBA00"
                     >
                         FANBOX
