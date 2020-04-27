@@ -1,0 +1,20 @@
+.link-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 3rem;
+    max-width: 480px;
+    background: #fff;
+    border: var(--button-color) solid 4px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #464557;
+    transition: 300ms ease;
+}
+
+.link-button:hover {
+    background: var(--button-color);
+    color: #fff;
+}

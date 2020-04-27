@@ -2,5 +2,7 @@
 export const home: string;
 export const main: string;
 export const topLogo: string;
+export const links: string;
 export const youtubeBox: string;
+export const calenderBox: string;
 export const back: string;
