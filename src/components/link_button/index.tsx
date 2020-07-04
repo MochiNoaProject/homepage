@@ -9,7 +9,7 @@ type Props = {
 export const LinkButton: FunctionComponent<Props> = ({
     href,
     color,
-    children
+    children,
 }: RenderableProps<Props>) => {
     return (
         <a
