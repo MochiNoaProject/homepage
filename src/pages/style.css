@@ -1,0 +1,37 @@
+html{
+    background-color: #ffe79d;
+
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "メイリオ", Meiryo, "klee", "Hiragino Kaku Gothic ProN",
+        "ヒラギノ角ゴ ProN W3", sans-serif;
+    font-weight: 400;
+    color: #444;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul{
+    padding-left: 1em;
+}
+
+summary{
+    cursor: pointer;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    outline: none;
+}
+
+table{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
