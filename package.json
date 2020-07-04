@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development next",
-    "build": "next build",
+    "build": "next build && node ./scripts/insert-mochinoa-aa-to-html.js",
     "start": "next start",
     "lint:ts": "eslint \"*/**/*.{js,ts,tsx}\" --cache",
     "lint:js": "eslint ./*.js --cache --ignore-pattern .eslintrc.js",
