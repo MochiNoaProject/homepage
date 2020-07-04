@@ -26,17 +26,11 @@ const Home: FunctionalComponent = () => {
             showDate: false,
             weekStart: 1,
             timezone: "Asia/Tokyo",
-            mode: smartphone ? "AGENDA" : "WEEK"
+            mode: smartphone ? "AGENDA" : "WEEK",
         }
     );
     return (
         <div class={style.home}>
-            <head>
-                <meta
-                    name="description"
-                    content="望月のあ Official Site"
-                ></meta>
-            </head>
             <div class={style.main}>
                 <p class={style.topLogo}>
                     <img src="assets/logo.png" alt="Logo" />
