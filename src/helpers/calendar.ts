@@ -29,12 +29,12 @@ export function getCalenderURL(
         showTz: parameters.showTitle ? "1" : "0",
         showDate: parameters.showTitle ? "1" : "0",
         wkst: parameters.weekStart.toString(),
-        mode: parameters.mode.toString()
+        mode: parameters.mode.toString(),
     };
     return [
         baseURL,
         Object.keys(n)
-            .map(key => `${key}=${n[key]}`)
-            .join("&")
+            .map((key) => `${key}=${n[key]}`)
+            .join("&"),
     ].join("?");
 }
