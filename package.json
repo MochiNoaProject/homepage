@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "homepage",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development next",
