@@ -1,0 +1,70 @@
+{
+    "prettier.disableLanguages": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": false,
+    "files.autoSave": "off",
+    "[javascript]": {
+        "editor.formatOnSave": false
+    },
+    "[typescript]": {
+        "editor.formatOnSave": false
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": false
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": false
+    },
+    "eslint.codeAction.showDocumentation": {
+        "enable": true
+    },
+    /**
+     * @see https://gist.github.com/hrdtbs/7a45f199f3a1646421faf8a7608dac0a
+     */
+    "files.exclude": {
+        // Default Setting
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+
+        // Custom Setting
+        // * ここに記述したものはVSCode上に表示されなくなります。表示しておきたいものは残してください。
+        // * どの程度CPU占有率に影響するかは使用している拡張機能にも依ります。
+
+        // node_modulesやbowser componentsのようなpackageなどを管理するためのディレクトリ
+        "**/node_modules": true,
+
+        // Cache用のディレクトリやファイル
+        //"**/.cache": true,
+        // Buildディレクトリやファイル
+        //"**/dist": true,
+        "**/build": true
+    },
+    "files.watcherExclude": {
+        // Default Settings
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+
+        // Custom Setting
+        // * ここに記述したものはVSCodeが監視しなくなるため、変更されてもautoSaveやformatOnSavenなどが発火しなくなります。
+        // * それぞれの指定が、どの程度CPU占有率に影響するかは使用している拡張機能にも依ります
+
+        // Cache用のディレクトリやファイル
+        "**/.cache": true,
+        // Buildディレクトリやファイル
+        "**/dist": true,
+        "**/build": true,
+
+        // 画像や動画用のディレクトリやファイル
+        "**/images": true,
+        "**/movies": true
+    },
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.codeActionsOnSaveTimeout": 2000,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}

@@ -1,17 +1,23 @@
 {
   "private": true,
   "name": "homepage",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "per-env",
-    "start:production": "npm run -s serve",
-    "start:development": "npm run -s dev",
-    "build": "preact build --template src/template.html && node scripts/insert-mochinoa-aa-to-html",
-    "build:gh": "GITHUB_PAGES=homepage preact build --template src/template.html && dot-json ./build/manifest.json start_url \"/homepage/\"",
-    "serve": "preact build --template src/template.html && sirv build --port 8080 --cors --single",
-    "dev": "preact watch --template src/template.html",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
+    "dev": "cross-env NODE_ENV=development next",
+    "build": "next build && node ./scripts/insert-mochinoa-aa-to-html.js",
+    "start": "next start",
+    "lint:ts": "eslint \"*/**/*.{js,ts,tsx}\" --cache",
+    "lint:js": "eslint ./*.js --cache --ignore-pattern .eslintrc.js",
+    "lint:json": "prettier \"*.json\"",
+    "lint:style": "stylelint \"./**/*.tsx\" --syntax css-in-js",
+    "format:ts": "yarn lint:ts --fix",
+    "format:js": "yarn lint:js --fix",
+    "format:json": "yarn lint:json --write",
+    "format:style": "yarn lint:style --fix",
+    "lint": "run-p -l -n -c --aggregate-output lint:*",
+    "format": "run-p -l -n -c --aggregate-output format:*",
+    "typecheck": "node ./scripts/typecheck.js"
   },
   "husky": {
     "hooks": {
@@ -19,42 +25,63 @@
     }
   },
   "lint-staged": {
-    "*.{css,md,scss}": "prettier --write",
-    "*.{js,jsx,ts,tsx}": "eslint --fix"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "yarn typecheck"
+    ]
   },
   "eslintIgnore": [
     "build/*"
   ],
   "dependencies": {
-    "preact": "^10.4.5",
-    "preact-jsx-chai": "^3.0.0",
-    "preact-markup": "^2.0.0",
-    "preact-render-to-string": "^5.1.9",
-    "preact-router": "^3.2.1"
+    "@emotion/core": "^10.0.28",
+    "clsx": "^1.1.1",
+    "next": "9.3.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-icons": "^3.10.0"
   },
   "devDependencies": {
-    "@teamsupercell/typings-for-css-modules-loader": "^2.2.0",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.10.2",
+    "@emotion/babel-preset-css-prop": "^10.0.27",
     "@types/node": "^14.0.14",
-    "@types/webpack-env": "^1.15.2",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-app": "^9.1.2",
+    "cross-env": "^7.0.2",
     "css-loader": "^1.0.1",
-    "dot-json": "^1.2.0",
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.5",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "husky": "^4.2.5",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
-    "per-env": "^1.0.2",
-    "preact-cli": "^3.0.0-next.19",
+    "next-offline": "^5.0.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
-    "sirv-cli": "^1.0.0-next.3",
-    "ts-loader": "^7.0.5",
-    "typescript": "^3.9.6",
-    "typings-for-css-modules-loader": "^1.7.0"
+    "stylelint": "^13.2.1",
+    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "typescript": "^3.9.6"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2% in JP",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
